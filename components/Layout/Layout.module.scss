@@ -1,0 +1,51 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  max-width: 1200px;
+  margin: 20px auto 80px;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.header {
+  text-align: center;
+  margin: 60px 0;
+}
+.header .link {
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  display: inline-block;
+}
+.header .heading,
+.header .sub-heading {
+  margin: 0;
+}
+.header .text {
+  display: block;
+  line-height: 1em;
+}
+.header .text--top {
+  font-size: 1em;
+  font-weight: 400;
+}
+.header .text--bottom {
+  font-size: 1.5em;
+  font-weight: 800;
+}
+.header .sub-heading {
+  font-size: 1.2em;
+  font-weight: 400;
+}
+.footer {
+  background: #111;
+  color: #bbb;
+  padding: 40px;
+  text-align: center;
+  margin-top: auto;
+}
