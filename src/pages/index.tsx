@@ -1,8 +1,6 @@
-import { createClient, EntryCollection } from "contentful";
-import { GetStaticPropsContext } from "next";
+import { createClient, Entry } from "contentful";
+import RecipeList from "../components/RecipeList";
 import { IRecipeFields } from "../schema/generated/contentful";
-
-import styles from "./Home.module.scss";
 
 export async function getStaticProps() {
   if (
@@ -18,25 +16,42 @@ export async function getStaticProps() {
     space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
     accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
   });
+  try {
+    const res = await client.getEntries<IRecipeFields>({
+      content_type: "recipe",
+    });
 
-  const res = await client.getEntries({
-    content_type: "recipe",
-  });
-
-  return {
-    props: {
-      recipes: res.items,
-    },
-  };
+    return {
+      props: {
+        recipes: res.items,
+        error: null,
+      },
+    };
+  } catch (error) {
+    return {
+      props: {
+        recipes: [],
+        error: error.message,
+      },
+    };
+  }
 }
 
 type RecipesProps = {
-  recipes: EntryCollection<IRecipeFields>;
+  recipes: Entry<IRecipeFields>[];
+  error: string | null;
 };
 
-const Recipes: React.FunctionComponent<RecipesProps> = ({ recipes }) => {
-  console.log(recipes);
-  return <div>Recipe List</div>;
+const Recipes: React.FunctionComponent<RecipesProps> = ({ recipes, error }) => {
+  if (error) {
+    return <div>{error}</div>;
+  }
+
+  return (
+    <div>
+      <RecipeList recipes={recipes} />
+    </div>
+  );
 };
 
 export default Recipes;
