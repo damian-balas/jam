@@ -1,0 +1,40 @@
+.card {
+  transform: rotateZ(-1deg);
+}
+.card__thumbnail {
+  position: relative;
+  padding-top: 56.25%;
+}
+.card__thumbnail-image {
+  object-fit: cover;
+}
+.card__content {
+  background: #fff;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  position: relative;
+  top: -2.5rem;
+  left: -0.625rem;
+}
+.card__info {
+  padding: 1rem;
+}
+.card__title {
+  margin: 0.25rem 0;
+  text-transform: uppercase;
+}
+.card__cooking-time {
+  margin: 0;
+  color: #777;
+}
+.card__actions {
+  margin-top: 1.25rem;
+  display: flex;
+  justify-content: flex-end;
+}
+.card__link {
+  color: #fff;
+  background: #f01b29;
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+}
