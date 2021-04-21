@@ -8,7 +8,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
       <header className={styles.header}>
         <Link href="/">
           <a className={styles.link}>
-            <h1 className="heading">
+            <h1 className={styles.heading}>
               <span className={classNames(styles.text, styles.textTop)}>
                 Just Add
               </span>

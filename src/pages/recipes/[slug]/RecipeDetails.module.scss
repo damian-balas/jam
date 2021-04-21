@@ -1,0 +1,80 @@
+.recipe-details {
+}
+
+.recipe-details__banner {
+  padding-top: 56.25%;
+  position: relative;
+  height: 0;
+}
+.recipe-details__banner-image {
+  object-fit: cover;
+}
+
+.recipe-details__title {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+  background: #2b2d42;
+  color: #fff;
+  display: inline-block;
+  padding: 20px;
+  position: relative;
+  top: -60px;
+  left: -10px;
+  transform: rotateZ(-1deg);
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-details__info {
+  margin-top: 6rem;
+}
+
+.recipe-details__cooking-time {
+  font-size: 0.85rem;
+  margin: 0;
+  font-weight: normal;
+  text-align: center;
+  &--bold {
+    font-weight: bold;
+  }
+}
+
+.recipe-details__method-title,
+.recipe-details__ingredients-title {
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.recipe-details__ingredients-title {
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+
+.recipe-details__ingredients-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.recipe-details__ingredient {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.25rem;
+  background-color: #d80032;
+  color: #fff;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.recipe-details__method-wrapper {
+  word-break: break-word;
+}
+
+.recipe-details__method-title {
+  margin-top: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.recipe-details__method-text {
+  line-height: 1.5;
+}
