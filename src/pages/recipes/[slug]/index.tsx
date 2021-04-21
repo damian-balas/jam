@@ -7,6 +7,7 @@ import { IRecipeFields } from "../../../schema/generated/contentful";
 import contentfulClient from "../../../services/contentfulClient";
 
 import styles from "../../../styles/RecipeDetails/RecipeDetails.module.scss";
+import RecipeDetailsSkeleton from "../../../skeletons/RecipeDetailsSkeleton";
 
 export async function getStaticProps({ params }: GetStaticPropsContext) {
   const noDataErrorMessage =
@@ -83,10 +84,22 @@ const RecipeDetails: React.FunctionComponent<RecipeDetailsProps> = ({
   recipe,
   error,
 }) => {
+  if (!recipe) {
+    return <RecipeDetailsSkeleton />;
+  }
+
   if (error) {
     return (
       <div>
         <h3>{error}</h3>
+      </div>
+    );
+  }
+
+  if (!recipe) {
+    return (
+      <div>
+        <h3>Loading...</h3>
       </div>
     );
   }
