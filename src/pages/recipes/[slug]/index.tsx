@@ -84,7 +84,7 @@ const RecipeDetails: React.FunctionComponent<RecipeDetailsProps> = ({
   recipe,
   error,
 }) => {
-  if (!recipe) {
+  if (!recipe && !error) {
     return <RecipeDetailsSkeleton />;
   }
 
