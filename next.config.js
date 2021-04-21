@@ -20,13 +20,6 @@ module.exports = {
         }
       });
     });
-    config.module.rules = [
-      ...config.module.rules,
-      {
-        test: /\.module.scss.d.ts$/,
-        use: "ignore-loader",
-      },
-    ];
     return config;
   },
   images: {
