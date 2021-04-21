@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { IRecipeFields } from "../../schema/generated/contentful";
 
-import styles from "./RecipeCard.module.scss";
+import styles from "../../styles/RecipeCard/RecipeCard.module.scss";
 
 type RecipeCardProps = {
   title: IRecipeFields["title"];

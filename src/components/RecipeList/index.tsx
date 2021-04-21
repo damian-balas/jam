@@ -2,7 +2,8 @@ import { Entry } from "contentful";
 import React from "react";
 import { IRecipeFields } from "../../schema/generated/contentful";
 import RecipeCard from "../RecipeCard";
-import styles from "./RecipeList.module.scss";
+
+import styles from "../../styles/RecipeList/RecipeList.module.scss";
 
 type RecipeListProps = {
   recipes: Entry<IRecipeFields>[];

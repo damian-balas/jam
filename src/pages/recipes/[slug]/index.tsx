@@ -6,7 +6,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { IRecipeFields } from "../../../schema/generated/contentful";
 import contentfulClient from "../../../services/contentfulClient";
 
-import styles from "./RecipeDetails.module.scss";
+import styles from "../../../styles/RecipeDetails/RecipeDetails.module.scss";
 
 export async function getStaticProps({ params }: GetStaticPropsContext) {
   const noDataErrorMessage =
