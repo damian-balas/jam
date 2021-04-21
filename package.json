@@ -1,6 +1,6 @@
 {
-  "name": "next-blog",
-  "version": "0.1.0",
+  "name": "jam",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev & yarn run:tsm",
