@@ -30,8 +30,8 @@ export async function getStaticProps({ params }: GetStaticPropsContext) {
       props: {
         recipe: res.items[0],
         error: null,
-        revalidate: 5,
       },
+      revalidate: 5,
     };
   } catch (error) {
     console.error(error);
@@ -40,8 +40,8 @@ export async function getStaticProps({ params }: GetStaticPropsContext) {
       props: {
         recipe: null,
         error: error.message,
-        revalidate: 5,
       },
+      revalidate: 5,
     };
   }
 }
