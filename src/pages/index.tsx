@@ -13,6 +13,7 @@ export async function getStaticProps() {
       props: {
         recipes: res.items,
         error: null,
+        revalidate: 5,
       },
     };
   } catch (error) {
@@ -20,6 +21,7 @@ export async function getStaticProps() {
       props: {
         recipes: [],
         error: error.message,
+        revalidate: 5,
       },
     };
   }
