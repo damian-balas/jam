@@ -1,12 +1,13 @@
-import { Entry } from "contentful";
-import RecipeList from "../components/RecipeList";
-import { IRecipeFields } from "../schema/generated/contentful";
-import contentfulClient from "../services/contentfulClient";
+import { Entry } from 'contentful';
+import { GetStaticProps } from 'next';
+import RecipeList from '../components/RecipeList';
+import { IRecipeFields } from '../schema/generated/contentful';
+import contentfulClient from '../services/contentfulClient';
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   try {
     const res = await contentfulClient.getEntries<IRecipeFields>({
-      content_type: "recipe",
+      content_type: 'recipe',
     });
 
     return {
@@ -25,7 +26,7 @@ export async function getStaticProps() {
       revalidate: 5,
     };
   }
-}
+};
 
 type RecipesProps = {
   recipes: Entry<IRecipeFields>[];

@@ -1,7 +1,7 @@
-import classNames from "classnames";
-import Link from "next/link";
+import classNames from 'classnames';
+import Link from 'next/link';
 
-import styles from "../../styles/Layout/Layout.module.scss";
+import styles from '../../styles/Layout/Layout.module.scss';
 
 const Layout: React.FunctionComponent = ({ children }) => {
   return (

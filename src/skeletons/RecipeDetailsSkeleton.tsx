@@ -1,9 +1,8 @@
-import classNames from "classnames";
-import React from "react";
+import classNames from 'classnames';
 
-import styles from "../styles/skeletons/RecipeDetailsSkeleton/RecipeDetailsSkeleton.module.scss";
+import styles from '../styles/skeletons/RecipeDetailsSkeleton/RecipeDetailsSkeleton.module.scss';
 
-const RecipeDetailsSkeleton = () => {
+const RecipeDetailsSkeleton: React.FunctionComponent = () => {
   return (
     <div className={styles.shimmer}>
       <div className={styles.recipeDetailsTopSection}>
@@ -23,7 +22,7 @@ const RecipeDetailsSkeleton = () => {
         />
       </div>
       <div className={styles.recipeDetailsInfo}>
-        <h3
+        <div
           className={classNames(
             styles.recipeDetailsIngredientsTitle,
             styles.shimmerOverlay,
@@ -51,7 +50,7 @@ const RecipeDetailsSkeleton = () => {
         </div>
       </div>
       <div className={styles.recipeDetailsMethodWrapper}>
-        <h3
+        <div
           className={classNames(
             styles.recipeDetailsMethodTitle,
             styles.shimmerOverlay,

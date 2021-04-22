@@ -1,15 +1,15 @@
-import Link from "next/link";
-import Image from "next/image";
-import React from "react";
-import { IRecipeFields } from "../../schema/generated/contentful";
+import Link from 'next/link';
+import Image from 'next/image';
 
-import styles from "../../styles/RecipeCard/RecipeCard.module.scss";
+import { IRecipeFields } from '../../schema/generated/contentful';
+
+import styles from '../../styles/RecipeCard/RecipeCard.module.scss';
 
 type RecipeCardProps = {
-  title: IRecipeFields["title"];
-  slug: IRecipeFields["slug"];
-  cookingTime: IRecipeFields["cookingTime"];
-  thumbnail: IRecipeFields["thumbnail"];
+  title: IRecipeFields['title'];
+  slug: IRecipeFields['slug'];
+  cookingTime: IRecipeFields['cookingTime'];
+  thumbnail: IRecipeFields['thumbnail'];
 };
 
 const RecipeCard: React.FunctionComponent<RecipeCardProps> = ({

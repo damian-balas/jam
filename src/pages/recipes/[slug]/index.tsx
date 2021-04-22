@@ -1,17 +1,18 @@
-import { Entry } from "contentful";
-import Image from "next/image";
-import { GetStaticPropsContext } from "next";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { Entry } from 'contentful';
+import Image from 'next/image';
+import { GetStaticPaths, GetStaticProps } from 'next';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
-import { IRecipeFields } from "../../../schema/generated/contentful";
-import contentfulClient from "../../../services/contentfulClient";
+import { IRecipeFields } from '../../../schema/generated/contentful';
+import contentfulClient from '../../../services/contentfulClient';
 
-import styles from "../../../styles/RecipeDetails/RecipeDetails.module.scss";
-import RecipeDetailsSkeleton from "../../../skeletons/RecipeDetailsSkeleton";
+import styles from '../../../styles/RecipeDetails/RecipeDetails.module.scss';
+import RecipeDetailsSkeleton from '../../../skeletons/RecipeDetailsSkeleton';
+import Logger from '../../../services/logger';
 
-export async function getStaticProps({ params }: GetStaticPropsContext) {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const noDataErrorMessage =
-    "No data found! Try to reload the site or check out some other recipes.";
+    'No data found! Try to reload the site or check out some other recipes.';
 
   try {
     if (!params?.slug) {
@@ -19,8 +20,8 @@ export async function getStaticProps({ params }: GetStaticPropsContext) {
     }
 
     const res = await contentfulClient.getEntries<IRecipeFields>({
-      content_type: "recipe",
-      "fields.slug": params.slug,
+      content_type: 'recipe',
+      'fields.slug': params.slug,
     });
 
     if (!res?.items?.length) {
@@ -35,7 +36,7 @@ export async function getStaticProps({ params }: GetStaticPropsContext) {
       revalidate: 5,
     };
   } catch (error) {
-    console.error(error);
+    Logger.error(error);
 
     return {
       props: {
@@ -45,12 +46,12 @@ export async function getStaticProps({ params }: GetStaticPropsContext) {
       revalidate: 5,
     };
   }
-}
+};
 
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   try {
     const res = await contentfulClient.getEntries<IRecipeFields>({
-      content_type: "recipe",
+      content_type: 'recipe',
     });
 
     const paths = res.items.map((item) => {
@@ -66,7 +67,7 @@ export const getStaticPaths = async () => {
       fallback: true,
     };
   } catch (error) {
-    console.error(error);
+    Logger.error(error);
 
     return {
       paths: [],
@@ -96,14 +97,6 @@ const RecipeDetails: React.FunctionComponent<RecipeDetailsProps> = ({
     );
   }
 
-  if (!recipe) {
-    return (
-      <div>
-        <h3>Loading...</h3>
-      </div>
-    );
-  }
-
   const {
     featuredImage,
     title,
@@ -123,10 +116,10 @@ const RecipeDetails: React.FunctionComponent<RecipeDetailsProps> = ({
         <h2 className={styles.recipeDetailsTitle}>
           {title}
           <p className={styles.recipeDetailsCookingTime}>
-            Takes approx{" "}
+            Takes approx{' '}
             <span className={styles.recipeDetailsCookingTimeBold}>
               {cookingTime} mins
-            </span>{" "}
+            </span>{' '}
             to make
           </p>
         </h2>

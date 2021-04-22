@@ -1,7 +1,7 @@
-const contentfulManagement = require("contentful-management");
-require('dotenv').config({path: './.env.local'});
+const contentfulManagement = require('contentful-management');
+require('dotenv').config({ path: './.env.local' });
 
-module.exports = function () {
+module.exports = function getContentfulEnvironment() {
   const contentfulClient = contentfulManagement.createClient({
     accessToken:
       process.env
@@ -10,5 +10,7 @@ module.exports = function () {
 
   return contentfulClient
     .getSpace(process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID)
-    .then((space) => space.getEnvironment(process.env.NEXT_PUBLIC_CONTENTFUL_ENVIRONMENT));
+    .then((space) =>
+      space.getEnvironment(process.env.NEXT_PUBLIC_CONTENTFUL_ENVIRONMENT),
+    );
 };
