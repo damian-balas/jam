@@ -42,9 +42,6 @@ const Counter: React.FunctionComponent<CounterProps> = ({
   const initialCount = type === 'increasing' ? 0 : from;
   const [count, setCount] = useState(initialCount);
 
-
-
-  
   useEffect(() => {
     const timerInterval = setInterval(() => {
       if (type === 'increasing') {
