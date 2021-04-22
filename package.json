@@ -47,10 +47,8 @@
     "typescript": "^4.2.4"
   },
   "lint-staged": {
-    "./**/*.{ts,tsx}": [
-      "tsc --noEmit"
-    ],
     "./**/*.{js,jsx,ts,tsx}": [
+      "bash -c tsc --noEmit",
       "prettier  --config .prettierrc --write .",
       "eslint . --fix",
       "git add ."
