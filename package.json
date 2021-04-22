@@ -48,7 +48,7 @@
   },
   "lint-staged": {
     "./**/*.{ts,tsx}": [
-      "tsc --noEmit --p ./tsconfig.json"
+      "tsc --noEmit"
     ],
     "./**/*.{js,jsx,ts,tsx}": [
       "prettier  --config .prettierrc --write .",
