@@ -71,6 +71,7 @@ const Counter: React.FunctionComponent<CounterProps> = ({
           {count}
         </span>
       )}
+      {count.toLocaleString.test}
       <svg className={styles.counterSvg} style={{ color }}>
         <circle
           style={{
