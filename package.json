@@ -9,7 +9,9 @@
     "lint": "eslint --fix .",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
     "run:tsm": "tsm . --watch --ignore **/node_modules/**",
-    "codegen": "contentful-typescript-codegen --output src/schema/generated/contentful.d.ts"
+    "codegen": "contentful-typescript-codegen --output src/schema/generated/contentful.d.ts",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^14.1.3",
@@ -50,10 +52,5 @@
       "eslint . --fix",
       "git add ."
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }
