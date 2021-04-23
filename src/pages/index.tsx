@@ -39,7 +39,7 @@ const Recipes: React.FunctionComponent<RecipesProps> = ({ recipes, error }) => {
     return (
       <Error
         heading="Sorry! Something went wrong..."
-        paragraph=" Please reload the page or try again later."
+        paragraph=" Please reload the page or try again later"
       />
     );
   }

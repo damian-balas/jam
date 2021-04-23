@@ -12,7 +12,7 @@ const Error: React.FunctionComponent<ErrorProps> = ({ heading, paragraph }) => {
   return (
     <div className={styles.error}>
       <h2 className={styles.errorHeading}>
-        {heading} <Emoji label="Pensive Face" symbol="😔" />
+        {heading} <Emoji label="Crying Face" symbol="😢" />
       </h2>
       {paragraph && <p className={styles.errorParagraph}>{paragraph}</p>}
     </div>
