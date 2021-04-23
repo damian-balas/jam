@@ -50,8 +50,7 @@
     "./**/*.{js,jsx,ts,tsx}": [
       "bash -c tsc --noEmit",
       "prettier  --config .prettierrc --write .",
-      "eslint . --fix",
-      "git add"
+      "eslint . --fix"
     ]
   }
 }
