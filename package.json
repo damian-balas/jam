@@ -51,7 +51,7 @@
       "bash -c tsc --noEmit",
       "prettier  --config .prettierrc --write .",
       "eslint . --fix",
-      "git add ."
+      "git add"
     ]
   }
 }
