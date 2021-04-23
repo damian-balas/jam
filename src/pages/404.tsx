@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
 import Counter from '../components/Counter';
-import Emoji from '../components/Emoji';
+import Error from '../components/Error';
 
 import styles from '../styles/404/404.module.scss';
 
@@ -20,10 +20,7 @@ const NotFound: React.FunctionComponent = () => {
   }, [router]);
 
   return (
-    <div className={styles.notFound}>
-      <h2 className={styles.notFoundHeading}>
-        Sorry! Page not found... <Emoji label="Pensive Face" symbol="😔" />
-      </h2>
+    <Error heading="Sorry! Page not found...">
       <p className={styles.notFoundParagraph}>
         You will be redirected to the{' '}
         <Link href="/">
@@ -39,7 +36,7 @@ const NotFound: React.FunctionComponent = () => {
         />{' '}
         seconds...
       </p>
-    </div>
+    </Error>
   );
 };
 

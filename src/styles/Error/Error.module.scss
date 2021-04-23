@@ -7,8 +7,12 @@
 }
 
 .error__heading {
-  font-size: 3rem;
+  font-size: 2rem;
   margin: 1rem 0;
+
+  @media screen and (min-width: 48rem) {
+    font-size: 3rem;
+  }
 }
 
 .error__paragraph {
