@@ -11,8 +11,7 @@ import RecipeDetailsSkeleton from '../../../skeletons/RecipeDetailsSkeleton';
 import Logger from '../../../services/logger';
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const noDataErrorMessage =
-    'No data found! Try to reload the site or check out some other recipes.';
+  const noDataErrorMessage = 'No data found!';
 
   try {
     if (!params?.slug) {
@@ -31,7 +30,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     return {
       props: {
         recipe: res.items[0],
-        error: null,
       },
       revalidate: 5,
     };
@@ -39,11 +37,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     Logger.error(error);
 
     return {
-      props: {
-        recipe: null,
-        error: error.message,
+      redirect: {
+        permanent: false,
+        destination: '/404',
       },
-      revalidate: 5,
     };
   }
 };
@@ -51,7 +48,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 export const getStaticPaths: GetStaticPaths = async () => {
   try {
     const res = await contentfulClient.getEntries<IRecipeFields>({
-      content_type: 'recipe',
+      content_type: 'recipes',
     });
 
     const paths = res.items.map((item) => {
@@ -78,23 +75,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 type RecipeDetailsProps = {
   recipe: Entry<IRecipeFields>;
-  error: string | null;
 };
 
 const RecipeDetails: React.FunctionComponent<RecipeDetailsProps> = ({
   recipe,
-  error,
 }) => {
-  if (!recipe && !error) {
+  if (!recipe) {
     return <RecipeDetailsSkeleton />;
-  }
-
-  if (error) {
-    return (
-      <div>
-        <h3>{error}</h3>
-      </div>
-    );
   }
 
   const {
