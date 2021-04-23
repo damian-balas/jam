@@ -1,34 +1,61 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js, Contentful & TypeScript
+
+## General Info
+
+You can add recipes in Contentful headless CMS and see them on the website.
+
+This project was made for educational purposes only by following this course: [Next.js & Contentful Site Build Tutorial](https://www.youtube.com/watch?v=m9mNsYJbkNg&list=PL4cUxeGkcC9jClk8wl1yJcN3Zlrr8YSA1). I have extended the code with **TypeScript** by my own and added some features.
+
+## [Live demo](https://jam-damian-balas.vercel.app/)
 
 ## Getting Started
 
-First, run the development server:
+These instructions will get you a copy of the project up and running on your local machine.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Setup
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Clone this repo to your desktop.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+    git clone git@github.com:damian-balas/jam.git
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Go to it's root directory.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+    cd jam
 
-## Learn More
+Run yarn to install all dependencies.
 
-To learn more about Next.js, take a look at the following resources:
+    yarn
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Once the dependencies are installed, you can run yarn dev to start the application. You will then be able to access it at localhost:3000.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+    yarn dev
 
-## Deploy on Vercel
+## Build
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+To build this app for production run yarn build.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+    yarn build
+
+## Technologies
+
+- React v17.0.2
+- Next v10.1.3
+- Contentful v8.2.1
+- TypeScript v4.2.4
+- Sass v1.32.8 (with CSS Modules)
+
+## Features
+
+- Add recipes in Contentful headless CMS
+
+- Show a list of recipes on home screen
+
+- View details about a recipe
+
+## Status
+
+Project is: finished.
+
+## Contact
+
+Created by [@Damian Balas](https://github.com/damian-balas/)
