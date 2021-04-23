@@ -1,5 +1,6 @@
 import { Entry } from 'contentful';
 import { GetStaticProps } from 'next';
+import Error from '../components/Error';
 import RecipeList from '../components/RecipeList';
 import { IRecipeFields } from '../schema/generated/contentful';
 import contentfulClient from '../services/contentfulClient';
@@ -35,7 +36,12 @@ type RecipesProps = {
 
 const Recipes: React.FunctionComponent<RecipesProps> = ({ recipes, error }) => {
   if (error) {
-    return <div>{error}</div>;
+    return (
+      <Error
+        heading="Sorry! Something went wrong..."
+        paragraph=" Please reload the page or try again later."
+      />
+    );
   }
 
   return (

@@ -1,0 +1,17 @@
+.error {
+  width: 100%;
+  padding: 1.5rem;
+  background-color: #fff;
+  box-shadow: 1px 3px 15px -4px rgba(0, 0, 0, 0.2);
+  transform: rotate(-1deg);
+}
+
+.error__heading {
+  font-size: 3rem;
+  margin: 1rem 0;
+}
+
+.error__paragraph {
+  line-height: 1.4;
+  font-size: 1.5rem;
+}
